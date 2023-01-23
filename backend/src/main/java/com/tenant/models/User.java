@@ -3,12 +3,13 @@ package com.tenant.models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.UUID;
 
 @Entity
 public class User {
 
     @Id
-    private int id;
+    private UUID id;
 
     @Column()
     private String names;
@@ -41,7 +42,7 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -73,7 +74,7 @@ public class User {
         return password;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
