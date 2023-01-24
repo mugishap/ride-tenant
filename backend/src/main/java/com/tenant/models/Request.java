@@ -19,7 +19,7 @@ public class Request {
     private Car carId;
 
     @Column(nullable = false)
-    private String startDate;
+    private String startDate; //Date java.util
 
     @Column(nullable = false)
     private String endDate;

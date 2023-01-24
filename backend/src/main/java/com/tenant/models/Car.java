@@ -18,4 +18,10 @@ public class Car {
     @Column
     private String isBooked;
 
+    public Car(String name, String isBooked) {
+        this.name = name;
+        this.isBooked = isBooked;
+    }
 }
+
+

@@ -1,12 +1,12 @@
 package com.tenant.controllers;
 
 
-import com.tenant.dao.UserDAO;
+import com.tenant.dao.impl.UserDAOImpl;
 
 public class UserController {
-    private UserDAO userDAO;
+    private UserDAOImpl userDAO;
 
-    public UserController(UserDAO userDAO) {
+    public UserController(UserDAOImpl userDAO) {
         this.userDAO = userDAO;
     }
 
