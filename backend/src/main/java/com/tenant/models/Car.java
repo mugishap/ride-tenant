@@ -8,39 +8,39 @@ import java.util.UUID;
 
 @Entity
 public class Car {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.ID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
-    @Column
+    @Column(nullable = false)
     private String plateNumber;
 
-    @Column
-    @
+    @Column(nullable=false)
     private String owner;
 
-    @Column
+    @Column(nullable=false)
     private String borrower;
 
-    @Column
-    private bool isBooked;
+    @Column(nullable=false)
+    private Boolean isBooked;
 
-    @Column
+    @JoinColumn
+    @ManyToOne(cascade = CascadeType.ALL)
     private String brand;
 
-    @Column
+    @Column(nullable=false)
     private String description;
 
-    @Column
+    @Column(nullable=false)
     private String imgUrl;
 
-    @Column
+    @Column(nullable=false)
     private Date added = new Date();
-    @Column
+    @Column(nullable=false)
     private String price;
 
-    @Column
+    @JoinColumn
+    @OneToOne(cascade = CascadeType.ALL)
     private String Currency;
 
     public String getPlateNumber() {
@@ -67,11 +67,11 @@ public class Car {
         this.borrower = borrower;
     }
 
-    public bool getIsBooked() {
+    public Boolean getIsBooked() {
         return isBooked;
     }
 
-    public void setIsBooked(bool isBooked) {
+    public void setIsBooked(Boolean isBooked) {
         this.isBooked = isBooked;
     }
 

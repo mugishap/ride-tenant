@@ -11,7 +11,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-    <description>School Management Information System is a Software Developed by Aphrodice Rwagaju for the Purpose of Teaching Software Development and Design in RCA</description>
+    <description>A car rental system</description>
     <build>
         <finalName>smis##0.1</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
@@ -204,6 +204,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.36</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
