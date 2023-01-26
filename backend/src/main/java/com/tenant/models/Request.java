@@ -10,7 +10,7 @@ public class Request {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @JoinColumn
+    @JoinColumn 
     @ManyToOne(cascade = CascadeType.ALL)
     private User userId;
 
