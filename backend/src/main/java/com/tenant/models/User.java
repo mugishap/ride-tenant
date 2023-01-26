@@ -1,8 +1,8 @@
 package com.tenant.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.UUID;
 
 import org.apache.poi.hssf.record.formula.functions.True;
 
@@ -12,7 +12,12 @@ import java.util.Date;
 @Entity
 public class User {
 
+<<<<<<< HEAD
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+=======
     @Id @GeneratedValue
+>>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
     private int id;
 
     @Column(name="name",  nullable= false )
@@ -36,7 +41,7 @@ public class User {
     @Column( nullable=false)
     private String password;
 
-    public User(String name, String email, String address, Date joined, String telephone, ROLES role, String password) {
+    public User(String name, String email, String address, LocalDate joined, String telephone, ROLES role, String password) {
         this.name = name;
         this.email = email;
         this.address = address;
@@ -44,6 +49,10 @@ public class User {
         this.telephone = telephone;
         this.role = role;
         this.password = password;
+    }
+
+    public User() {
+
     }
 
     public int getId() {

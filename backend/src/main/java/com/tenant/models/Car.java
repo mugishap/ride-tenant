@@ -10,7 +10,11 @@ import java.util.UUID;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
+    private int id;
+=======
     private UUID id;
+>>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
 
     @Column(nullable = false)
     private String plateNumber;
@@ -115,6 +119,70 @@ public class Car {
         this.price = price;
     }
 
+<<<<<<< HEAD
+    @Column
+    private int price;
+
+    @Column
+    private String currency;
+
+    @Column
+    private boolean isBooked;
+
+    public Car(String name, int price, String currency, boolean isBooked) {
+        this.name = name;
+        this.price = price;
+        this.currency = currency;
+        this.isBooked = isBooked;
+    }
+
+    public Car() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public boolean isBooked() {
+        return isBooked;
+    }
+
+    public void setBooked(boolean booked) {
+        isBooked = booked;
+    }
+}
+
+
+=======
     public String getCurrency() {
         return Currency;
     }
@@ -123,3 +191,4 @@ public class Car {
         Currency = currency;
     }
 }
+>>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47

@@ -1,14 +1,16 @@
 package com.tenant.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
 public class Request {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @JoinColumn 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -19,18 +21,18 @@ public class Request {
     private Car carId;
 
     @Column(nullable = false)
-    private String startDate;
+    private LocalDate startDate;
 
     @Column(nullable = false)
-    private String endDate;
+    private LocalDate endDate;
 
     @Column(nullable = false)
-    private String timeRequested;
+    private LocalDate timeRequested;
 
-    @Column(nullable = false,columnDefinition = "")
+    @Column(nullable = false, columnDefinition = "")
     private STATUS status;
 
-    public Request(User userId, Car carId, String startDate, String endDate, String timeRequested, STATUS status) {
+    public Request(User userId, Car carId, LocalDate startDate, LocalDate endDate, LocalDate timeRequested, STATUS status) {
         this.userId = userId;
         this.carId = carId;
         this.startDate = startDate;
@@ -39,11 +41,15 @@ public class Request {
         this.status = status;
     }
 
-    public UUID getId() {
+    public Request() {
+
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -63,27 +69,27 @@ public class Request {
         this.carId = carId;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public String getTimeRequested() {
+    public LocalDate getTimeRequested() {
         return timeRequested;
     }
 
-    public void setTimeRequested(String timeRequested) {
+    public void setTimeRequested(LocalDate timeRequested) {
         this.timeRequested = timeRequested;
     }
 
@@ -95,7 +101,8 @@ public class Request {
         this.status = status;
     }
 
-    public enum STATUS{
+
+    public enum STATUS {
         PENDING,
         DECLINED,
         GRANTED
