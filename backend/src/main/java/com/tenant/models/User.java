@@ -1,15 +1,14 @@
 package com.tenant.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 public class User {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column()
     private String names;
@@ -42,7 +41,11 @@ public class User {
         this.password = password;
     }
 
-    public UUID getId() {
+    public User() {
+
+    }
+
+    public int getId() {
         return id;
     }
 
@@ -74,7 +77,7 @@ public class User {
         return password;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

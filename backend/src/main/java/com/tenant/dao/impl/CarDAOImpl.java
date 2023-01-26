@@ -25,7 +25,7 @@ public class CarDAOImpl implements CarDAO {
         session.close();
     }
 
-    public Car findById(UUID id) {
+    public Car findById(int id) {
         Session session = sessionFactory.openSession();
         Car car = (Car) session.get(Car.class, id);
         session.close();

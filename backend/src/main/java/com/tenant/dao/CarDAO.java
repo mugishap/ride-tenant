@@ -8,7 +8,7 @@ import java.util.UUID;
 public interface CarDAO {
 
     public void save(Car car);
-    public Car findById(UUID id);
+    public Car findById(int id);
     public void update(Car car);
     public void delete(Car car);
     public List<Car> getCars();
