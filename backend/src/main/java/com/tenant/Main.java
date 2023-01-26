@@ -14,11 +14,11 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
 
-        User user1 = new User("Mugisha Precieux", "precieuxmugisha@gmail.com", "KK 105 St", "2345673842543", "+250782307144", User.ROLES.ADMIN, "password");
-        User user2 = new User("Ishimwe Sugira Yvan", "phoenixnavyn@gmail.com", "KK 105 St", "2345673842543", "+250782307144", User.ROLES.ADMIN, "password");
-        User user3 = new User("Gisingizo Gloria", "gisingizo012@gmail.com", "KK 105 St", "2345673842543", "+250782307144", User.ROLES.ADMIN, "password");
-        User user4 = new User("Dukundane Furaha Yves Derrick", "yvesdericks@gmail.com", "KK 105 St", "2345673842543", "+250782307144", User.ROLES.ADMIN, "password");
-        User user5 = new User("Kalisa Ineza Giovanni", "kalisathecoder@gmail.com", "KK 105 St", "2345673842543", "+250782307144", User.ROLES.ADMIN, "password");
+        User user1 = new User("Mugisha Precieux", "precieuxmugisha@gmail.com", "KK 105 St", LocalDate.now(), "+250782307144", User.ROLES.ADMIN, "password");
+        User user2 = new User("Ishimwe Sugira Yvan", "phoenixnavyn@gmail.com", "KK 105 St", LocalDate.now(), "+250782307144", User.ROLES.ADMIN, "password");
+        User user3 = new User("Gisingizo Gloria", "gisingizo012@gmail.com", "KK 105 St", LocalDate.now(), "+250782307144", User.ROLES.ADMIN, "password");
+        User user4 = new User("Dukundane Furaha Yves Derrick", "yvesdericks@gmail.com", "KK 105 St", LocalDate.now(), "+250782307144", User.ROLES.ADMIN, "password");
+        User user5 = new User("Kalisa Ineza Giovanni", "kalisathecoder@gmail.com", "KK 105 St", LocalDate.now(), "+250782307144", User.ROLES.ADMIN, "password");
 
         Car car1 = new Car("Lamborghini Aventador", 500, "USD", false);
         Car car2 = new Car("Toyota Carina", 500, "USD", false);

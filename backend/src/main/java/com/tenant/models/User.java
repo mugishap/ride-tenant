@@ -1,38 +1,48 @@
 package com.tenant.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.UUID;
+
+import org.apache.poi.hssf.record.formula.functions.True;
+
+import javax.persistence.GeneratedValue;
+import java.util.Date;
 
 @Entity
 public class User {
 
+<<<<<<< HEAD
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+=======
+    @Id @GeneratedValue
+>>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
     private int id;
 
-    @Column()
-    private String names;
+    @Column(name="name",  nullable= false )
+    private String name;
 
-    @Column()
+    @Column(name="email",  nullable=false)
     private String email;
 
-    @Column()
+    @Column(name="address",  nullable=false)
     private String address;
 
-    @Column()
-    private String joined;
+    @Column(name="joined", nullable=false)
+    private Date joined;
 
-    @Column()
+    @Column(nullable=false)
     private String telephone;
 
-    @Column()
+    @Column( nullable=false)
     private ROLES role;
 
-    @Column()
+    @Column( nullable=false)
     private String password;
 
-    public User(String names, String email, String address, String joined, String telephone, ROLES role, String password) {
-        this.names = names;
+    public User(String name, String email, String address, LocalDate joined, String telephone, ROLES role, String password) {
+        this.name = name;
         this.email = email;
         this.address = address;
         this.joined = joined;
@@ -50,7 +60,7 @@ public class User {
     }
 
     public String getNames() {
-        return names;
+        return name;
     }
 
     public String getEmail() {
@@ -61,7 +71,7 @@ public class User {
         return address;
     }
 
-    public String getJoined() {
+    public Date getJoined() {
         return joined;
     }
 
@@ -81,8 +91,8 @@ public class User {
         this.id = id;
     }
 
-    public void setNames(String names) {
-        this.names = names;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setEmail(String email) {
@@ -93,7 +103,7 @@ public class User {
         this.address = address;
     }
 
-    public void setJoined(String joined) {
+    public void setJoined(Date joined) {
         this.joined = joined;
     }
 
