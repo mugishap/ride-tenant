@@ -2,17 +2,15 @@ package com.tenant.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.UUID;
 
 @Entity
-public class Request {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JoinColumn 
+    @JoinColumn
     @ManyToOne(cascade = CascadeType.ALL)
     private User userId;
 
@@ -32,7 +30,11 @@ public class Request {
     @Column(nullable = false, columnDefinition = "")
     private STATUS status;
 
-    public Request(User userId, Car carId, LocalDate startDate, LocalDate endDate, LocalDate timeRequested, STATUS status) {
+    @JoinColumn
+    @OneToOne(mappedBy = "request")
+    private Payment payment;
+
+    public Order(User userId, Car carId, LocalDate startDate, LocalDate endDate, LocalDate timeRequested, STATUS status) {
         this.userId = userId;
         this.carId = carId;
         this.startDate = startDate;
@@ -41,7 +43,7 @@ public class Request {
         this.status = status;
     }
 
-    public Request() {
+    public Order() {
 
     }
 
