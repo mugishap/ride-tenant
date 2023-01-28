@@ -4,48 +4,49 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.UUID;
+
 
 @Entity
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-<<<<<<< HEAD
     private int id;
-=======
-    private UUID id;
->>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
 
     @Column(nullable = false)
     private String plateNumber;
 
-    @Column(nullable=false)
-    private String owner;
-
-    @Column(nullable=false)
-    private String borrower;
-
-    @Column(nullable=false)
+    @Column(nullable = false)
     private Boolean isBooked;
 
-    @JoinColumn
     @ManyToOne(cascade = CascadeType.ALL)
-    private String brand;
+    private Brand brandId;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String description;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String imgUrl;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private Date added = new Date();
-    @Column(nullable=false)
+
+    @Column(nullable = false)
     private String price;
 
-    @JoinColumn
-    @OneToOne(cascade = CascadeType.ALL)
-    private String Currency;
+    @Column
+    private String currency;
+
+    public Car() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPlateNumber() {
         return plateNumber;
@@ -55,36 +56,20 @@ public class Car {
         this.plateNumber = plateNumber;
     }
 
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public String getBorrower() {
-        return borrower;
-    }
-
-    public void setBorrower(String borrower) {
-        this.borrower = borrower;
-    }
-
-    public Boolean getIsBooked() {
+    public Boolean getBooked() {
         return isBooked;
     }
 
-    public void setIsBooked(Boolean isBooked) {
-        this.isBooked = isBooked;
+    public void setBooked(Boolean booked) {
+        isBooked = booked;
     }
 
-    public String getBrand() {
-        return brand;
+    public Brand getBrandId() {
+        return brandId;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setBrandId(Brand brandId) {
+        this.brandId = brandId;
     }
 
     public String getDescription() {
@@ -119,51 +104,6 @@ public class Car {
         this.price = price;
     }
 
-<<<<<<< HEAD
-    @Column
-    private int price;
-
-    @Column
-    private String currency;
-
-    @Column
-    private boolean isBooked;
-
-    public Car(String name, int price, String currency, boolean isBooked) {
-        this.name = name;
-        this.price = price;
-        this.currency = currency;
-        this.isBooked = isBooked;
-    }
-
-    public Car() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public String getCurrency() {
         return currency;
     }
@@ -172,23 +112,16 @@ public class Car {
         this.currency = currency;
     }
 
-    public boolean isBooked() {
-        return isBooked;
-    }
-
-    public void setBooked(boolean booked) {
-        isBooked = booked;
-    }
-}
-
-
-=======
-    public String getCurrency() {
-        return Currency;
-    }
-
-    public void setCurrency(String currency) {
-        Currency = currency;
+    public Car(String plateNumber, Boolean isBooked, Brand brandId, String description, String imgUrl, Date added, String price, String currency) {
+        this.plateNumber = plateNumber;
+        this.isBooked = isBooked;
+        this.brandId = brandId;
+        this.description = description;
+        this.imgUrl = imgUrl;
+        this.added = added;
+        this.price = price;
+        this.currency = currency;
     }
 }
->>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
+
+

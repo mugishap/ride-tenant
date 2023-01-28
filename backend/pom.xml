@@ -249,13 +249,8 @@
     </dependencies>
     <developers>
         <developer>
-<<<<<<< HEAD
-            <name>Mugisha Precieux + Team</name>
-            <email>precieuxmugisha@gmail.com</email>
-=======
             <name>Team Puceau</name>
-            <email>aphrorwa@gmail.com</email>
->>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
+            <email>precieuxmugisha@gmail.com</email>
             <roles>
                 <role>Passionate Software Developer</role>
             </roles>

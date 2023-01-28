@@ -12,12 +12,8 @@ import java.util.Date;
 @Entity
 public class User {
 
-<<<<<<< HEAD
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-=======
-    @Id @GeneratedValue
->>>>>>> e8754b3406d58daf4f5bb3e3a310027f25fcea47
     private int id;
 
     @Column(name="name",  nullable= false )
@@ -30,7 +26,7 @@ public class User {
     private String address;
 
     @Column(name="joined", nullable=false)
-    private Date joined;
+    private LocalDate joined;
 
     @Column(nullable=false)
     private String telephone;
@@ -71,7 +67,7 @@ public class User {
         return address;
     }
 
-    public Date getJoined() {
+    public LocalDate getJoined() {
         return joined;
     }
 
@@ -103,7 +99,7 @@ public class User {
         this.address = address;
     }
 
-    public void setJoined(Date joined) {
+    public void setJoined(LocalDate joined) {
         this.joined = joined;
     }
 
