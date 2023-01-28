@@ -31,7 +31,7 @@
 		
 		<!-- Models -->
 		<mapping class="com.tenant.models.Car" />
-		<mapping class="com.tenant.models.Request" />
+		<mapping class="com.tenant.models.Order" />
 		<mapping class="com.tenant.models.User" />
 
 	</session-factory>
